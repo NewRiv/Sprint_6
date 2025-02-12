@@ -2,6 +2,8 @@ import allure
 from helpers import generate_date_rent
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class OrderPage(BasePage):
@@ -46,15 +48,15 @@ class OrderPage(BasePage):
         rent_date = generate_date_rent()
         day = rent_date.split('.')[0]
         self.add_text_to_element(OrderPageLocators.input_date_rent, rent_date)
-        day_calendare_locator = self.format_locators(OrderPageLocators.date_calendar_element, day)
-        return self.click_to_element(day_calendare_locator)
+        day_calendar_locator = self.format_locators(OrderPageLocators.date_calendar_element, day)
+        return self.click_to_element(day_calendar_locator)
+
 
     @allure.step('Заполняем поле Срок аренды')
     def fill_in_input_count_rent_day(self, rent_day):
         self.click_to_element(OrderPageLocators.input_count_rent_day)
         locator_count_rent_day = self.format_locators(OrderPageLocators.list_count_rent_day, rent_day)
         return self.click_to_element(locator_count_rent_day)
-
 
     @allure.step('Выбираем чек-бокс')
     def fill_in_checkbox_colour(self, colour):

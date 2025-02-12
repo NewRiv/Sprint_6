@@ -7,7 +7,7 @@ info_client = {
     'name': random.choice(['Аня', 'Дмитрий', 'Ирина']),
     'last_name': random.choice(['Петрова', 'Иванов', 'Смирнова']),
     'address': random.choice(['ул. Тагильская', 'Открытое шоссе']) +' '+ str(random.randint(1,99)),
-    'metro': random.choice(['Бульвар Рокоссовского', 'Красные ворота' ,'Комсомольская']),
+    'metro': random.choice(['Бульвар Рокоссовского', 'Красные Ворота' ,'Комсомольская']),
     'phone': f'+7{random.randint(100000000, 999999999)}'
 }
 
